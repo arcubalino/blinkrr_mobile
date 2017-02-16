@@ -27,6 +27,8 @@ angular.module('starter.controllers', [])
   // Open the login modal
   $scope.login = function() {
     $scope.modal.show();
+
+
   };
 
   // Perform the login action when the user submits the login form
@@ -39,6 +41,16 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+})
+
+.controller("LoginCtrl",function($http,$scope){
+
+    $http.get('http://blinkrr.epizy.com/Products/lists').success(function(data){
+      console.log(data)
+    })
+
+
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {
